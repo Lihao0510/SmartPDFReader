@@ -30,8 +30,9 @@ public class RemotePdfReaderActivity extends Activity implements OnPageChangeLis
 	private DownloadCompletedReciever mReciever;
 	public static final String DOWNLOAD_ACTION = "com.lihao.downloadcase";
 	private static  final String oaDir = Environment.getExternalStorageDirectory().getPath() + "/isocache";
-	private static final String fileUrl = "https://tj-yun-ftn.weiyun.com/ftn_handler/ef1feb654ff6bb3b85aee26bc9afd08280727079193406a58dc3d7223c563fb6abdb12766ad2fc641ba4bf4dc51039c7b30f0ddefcf4f4edf502616ca67d958a?compressed=0&dtype=1&fname=%E3%80%90%E9%BB%91%E9%A9%AC%E6%95%99%E7%A8%8B%E3%80%91%E6%8C%91%E6%88%98%E5%B9%B4%E8%96%AA20W%E4%B9%8BAndroid%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0%E2%80%94Day06%EF%BC%88%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC%E5%92%8C%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92%EF%BC%89.pdf";
-
+	private static final String fileUrl = "https://tj-yun-ftn.weiyun.com/ftn_handler/acc301e1919604c0dbe040fc773817410b1d904487f67afc34e4b4b586ec997a8da2ce04acf6982727e26bbea455bf568349756bb0b5436d7804a410850143b0?compressed=0&dtype=1&fname=%E3%80%90%E9%BB%91%E9%A9%AC%E6%95%99%E7%A8%8B%E3%80%91%E6%8C%91%E6%88%98%E5%B9%B4%E8%96%AA20W%E4%B9%8BAndroid%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0%E2%80%94Day06%EF%BC%88%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC%E5%92%8C%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92%EF%BC%89.pdf";
+	
+	
 	private Handler mHandler = new Handler() {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
@@ -94,7 +95,11 @@ public class RemotePdfReaderActivity extends Activity implements OnPageChangeLis
 			pageNumber = 1;
 		setTitle("PDFÔÄ¶ÁÆ÷");
 		File srcFile = new File(assetFileName);
-		pdfView.fromFile(srcFile).defaultPage(pageNumber).enableDoubletap(true).onPageChange(this).load();
+		pdfView.fromFile(srcFile)
+				.defaultPage(pageNumber)
+				.enableDoubletap(true)
+				.onPageChange(this)
+				.load();
 	}
 
 	@Override
