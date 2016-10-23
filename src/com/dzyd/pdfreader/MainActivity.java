@@ -16,6 +16,7 @@ public class MainActivity extends Activity implements OnClickListener{
 	private Button loadLocalPdf;
 	private Button loadRemotePdf;
 	private Button aFinalReadPdf;
+	private Button testInputError;
 	private String oaDir = Environment.getExternalStorageDirectory().getPath() + "/isocache";
 
 	@Override
@@ -31,6 +32,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		loadLocalPdf = (Button) findViewById(R.id.bt_webview);
 		loadRemotePdf = (Button) findViewById(R.id.bt_urlpdf);
 		aFinalReadPdf = (Button) findViewById(R.id.bt_afinalpdf);
+		testInputError = (Button) findViewById(R.id.bt_editinput);
 		Log.d("Lihao", oaDir);
 	}
 
@@ -39,6 +41,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		loadLocalPdf.setOnClickListener(this);
 		loadRemotePdf.setOnClickListener(this);
 		aFinalReadPdf.setOnClickListener(this);
+		testInputError.setOnClickListener(this);
 	}
 
 	@Override
@@ -56,6 +59,10 @@ public class MainActivity extends Activity implements OnClickListener{
 			break;
 		case R.id.bt_afinalpdf:
 			intent = new Intent(this,AFinalReaderActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.bt_editinput:
+			intent = new Intent(this,EditErrorActivity.class);
 			startActivity(intent);
 			break;
 		default:

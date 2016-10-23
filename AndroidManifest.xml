@@ -32,6 +32,8 @@
         </activity>
         <activity android:name="com.dzyd.pdfreader.AFinalReaderActivity" >
         </activity>
+        <activity android:name="com.dzyd.pdfreader.EditErrorActivity" >
+        </activity>
 
         <service
             android:name="com.dzyd.service.DownloadService"

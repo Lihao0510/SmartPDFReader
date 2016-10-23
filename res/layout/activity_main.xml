@@ -37,5 +37,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="使用多线程加载PDF" />
+    
+    <Button
+        android:id="@+id/bt_editinput"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试自定义输入框架" />
 
 </LinearLayout>
